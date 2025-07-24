@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Menu, X, Home } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X, Home } from "lucide-react";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -26,6 +26,7 @@ export default function Navbar() {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/properties">Properties</NavLink>
             <NavLink href="/contact">Contact</NavLink>
+            <NavLink href="/login">Login</NavLink> {/* ✅ NEW */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -54,11 +55,14 @@ export default function Navbar() {
             <MobileNavLink href="/contact" onClick={toggleMenu}>
               Contact
             </MobileNavLink>
+            <MobileNavLink href="/login" onClick={toggleMenu}> {/* ✅ NEW */}
+              Login
+            </MobileNavLink>
           </div>
         </div>
       )}
     </nav>
-  )
+  );
 }
 
 function NavLink({ href, children }) {
@@ -66,7 +70,7 @@ function NavLink({ href, children }) {
     <Link href={href} className="text-gray-700 hover:text-emerald-600 font-medium transition-colors">
       {children}
     </Link>
-  )
+  );
 }
 
 function MobileNavLink({ href, onClick, children }) {
@@ -78,5 +82,5 @@ function MobileNavLink({ href, onClick, children }) {
     >
       {children}
     </Link>
-  )
+  );
 }

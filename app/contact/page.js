@@ -19,9 +19,9 @@ export default function ContactPage() {
           <h2 className="text-xl font-semibold mb-4">Our Office</h2>
           <div className="bg-white p-4 rounded-lg shadow-md mb-4">
             <h3 className="font-semibold text-lg mb-2">Virtual Property Tours</h3>
-            <p className="mb-1">123 Real Estate Avenue</p>
-            <p className="mb-1">Los Angeles, CA 90001</p>
-            <p className="mb-1">Phone: (555) 123-4567</p>
+            <p className="mb-1">sector 1 sonipat</p>
+            <p className="mb-1">Near Newton School of Technology</p>
+            <p className="mb-1">Phone: +91 123-4567</p>
             <p>Email: info@virtualpropertytours.com</p>
           </div>
 
