@@ -26,7 +26,8 @@ export default function Navbar() {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/properties">Properties</NavLink>
             <NavLink href="/contact">Contact</NavLink>
-            <NavLink href="/login">Login</NavLink> {/* ✅ NEW */}
+            <NavLink href="/login">Login</NavLink>
+            <NavLink href="/signup">Signup</NavLink> {/* ✅ NEW */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -55,8 +56,11 @@ export default function Navbar() {
             <MobileNavLink href="/contact" onClick={toggleMenu}>
               Contact
             </MobileNavLink>
-            <MobileNavLink href="/login" onClick={toggleMenu}> {/* ✅ NEW */}
+            <MobileNavLink href="/login" onClick={toggleMenu}>
               Login
+            </MobileNavLink>
+            <MobileNavLink href="/signup" onClick={toggleMenu}> {/* ✅ NEW */}
+              Signup
             </MobileNavLink>
           </div>
         </div>

@@ -1,20 +1,24 @@
 'use client';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../lib/firebase';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (email === 'admin@example.com' && password === 'password') {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
       alert('Login successful!');
       router.push('/');
-    } else {
-      alert('Invalid credentials');
+    } catch (error: any) {
+      alert(error.message);
     }
   };
 
@@ -32,7 +36,7 @@ export default function LoginPage() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="w-full mb-4 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          placeholder="admin@example.com"
+          placeholder="you@example.com"
           required
         />
 

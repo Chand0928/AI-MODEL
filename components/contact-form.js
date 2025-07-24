@@ -36,7 +36,11 @@ export default function ContactForm() {
       setFormData({ name: "", email: "", phone: "", message: "" })
     } catch (error) {
       console.error("Error sending message:", error)
-      setStatus({ submitting: false, submitted: false, error: "Failed to send message. Please try again." })
+      setStatus({
+        submitting: false,
+        submitted: false,
+        error: "Failed to send message. Please try again.",
+      })
     }
   }
 
@@ -119,7 +123,9 @@ export default function ContactForm() {
             ></textarea>
           </div>
 
-          {status.error && <div className="mb-4 p-3 bg-red-50 text-red-600 rounded-md">{status.error}</div>}
+          {status.error && (
+            <div className="mb-4 p-3 bg-red-50 text-red-600 rounded-md">{status.error}</div>
+          )}
 
           <button
             type="submit"
